@@ -1,0 +1,2 @@
+# watchlister
+Canadian Stock Watchlist
