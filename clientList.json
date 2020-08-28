@@ -1,0 +1,25 @@
+{   
+    "clients": [
+        {
+            "firstName": "Marc-Olivier",
+            "lastName": "Fortin",
+            "preference": "email",
+            "email": "mfortin.uwaterloo@gmail.com",
+            "phoneNumber": "15148269984",
+            "carrier": "rogers",
+            "tickers": [
+                {
+                    "ticker": "AC",
+                    "lowerBound": 16.00,
+                    "upperBound": 17.50
+                },
+                {
+                    "ticker": "X",
+                    "lowerBound": 134.00,
+                    "upperBound": 140.00
+                }
+            ]
+        }
+
+    ]
+}

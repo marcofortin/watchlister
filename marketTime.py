@@ -12,3 +12,4 @@ def isMarketOpen() -> bool:
     justPastOpen = (now.hour == 9 and now.minute >= 30) # 9:30-9:59
     justBeforeClose = (now.hour == 16 and now.minute < 30) # 16:00-16:29
     return isWeek and (isBetween or justPastOpen or justBeforeClose)
+    

@@ -31,3 +31,4 @@ def getStockPrice(stockTicker : str) -> float:
     driver.quit()
 
     return price
+    

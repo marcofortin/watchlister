@@ -1,6 +1,7 @@
 ###################### Imports ###################### 
 from scrapper import getStockPrice
-from sms import sendText
+from smsSender import sendText
+from emailSender import sendEmail
 from marketTime import isMarketOpen
 import json
 
@@ -10,7 +11,7 @@ import json
 if isMarketOpen():
     
     # Setup stock list from json file
-    f = open('stockList.json')
+    f = open('clientList.json')
     data = json.load(f)
 
     # For each client in client list
@@ -21,11 +22,20 @@ if isMarketOpen():
 
             # Get stock's price
             price = getStockPrice(stock['ticker'])
+            print(price)
+
+            # Make sure value is scraped
+            while price == 0:
+                getStockPrice(stock['ticker'])
 
             # Check if the stock is not in the given range
             if price < stock['lowerBound'] or price > stock['upperBound']:
 
+                # Notify client
                 message = "Hello " + client["firstName"]  + ".\n" # greetings
                 message += stock['ticker'] + "'s price of $" + str(price) + " is looking interesting!" # price warning
                 print(message)
-                sendText(message, client["phoneNumber"], client["carrier"])
+                if client['preference'] == "email":
+                    sendEmail(message, client["email"])
+                elif client['preference'] == "sms":
+                    sendText(message, client["phoneNumber"], client["carrier"])
