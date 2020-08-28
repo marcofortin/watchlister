@@ -1,0 +1,23 @@
+{   
+    "clients": [
+        {
+            "firstName": "Marc-Olivier",
+            "lastName": "Fortin",
+            "tickers": [
+                {
+                    "ticker": "AC",
+                    "lowerBound": 16.00,
+                    "upperBound": 17.50
+                },
+                {
+                    "ticker": "X",
+                    "lowerBound": 134.00,
+                    "upperBound": 140.00
+                }
+            ],
+            "phoneNumber": "15148269984",
+            "carrier": "rogers"
+        }
+
+    ]
+}
